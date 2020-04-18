@@ -1,0 +1,75 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+:root {
+    --square-size: 100px;
+}
+
+.players {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    width: 60%;
+    margin: auto;
+}
+
+.board-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    align-content: center;
+}
+
+.square {
+    width: var(--square-size);
+    height: var(--square-size);
+    display: flex;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.square:first-child,
+.square:nth-child(2),
+.square:nth-child(3) {
+    border-top: none;
+}
+
+.square:nth-child(3n + 1) {
+    border-left: none;
+}
+
+.square:nth-child(3n + 3) {
+    border-right: none;
+}
+
+.square:last-child,
+.square:nth-child(8),
+.square:nth-child(7) {
+    border-bottom: none;
+}
+
+.winning-message {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    display: none;
+}
