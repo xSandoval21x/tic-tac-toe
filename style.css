@@ -73,3 +73,7 @@ body {
     font-size: 3rem;
     display: none;
 }
+
+.winning-message.show {
+    display: flex;
+}
