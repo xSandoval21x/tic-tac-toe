@@ -10,9 +10,17 @@
 <body>
     <h1>Tic-Tac-Toe</h1>
     <div class="players">
-        <div class="x-player">Player Name: X</div>
-        <div class="o-player">Player Name: O</div>
+        <div class="player-name">
+            <label for="x-player">Player Name: </label>
+            <input type="text" id="x-player" name="x-player" value="X" size="10rem">
+        </div>
+        <div class="player-name">
+            <label for="o-player">Player Name: </label>
+            <input type="text" id="o-player" name="o-player" value="O" size="10rem">
+        </div>
     </div>
+    <div class="start-button-container show"><button id="start-button">Start!</button></div>
+    <div class="message">You are up!</div>
     <div class="board-container" id="board">
         <div class="square" data-cell></div>
         <div class="square" data-cell></div>
@@ -24,11 +32,14 @@
         <div class="square" data-cell></div>
         <div class="square" data-cell></div>
     </div>
-
+    <div class="reset-button-container"><button id="reset-button">Reset</button></div>
     <div class="winning-message" id="winningMessage">
         <div data-winning-message-text></div>
         <button id="restart-button">Restart</button>
     </div>
+    <footer>
+        <div id="sandoval">xSandoval21x</div>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

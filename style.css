@@ -3,21 +3,89 @@
 }
 
 body {
-    height: 100%;
+    height: 100vh;
     margin: 0;
     font-family: 'Quicksand', sans-serif;
+    background: var(--background-color);
+    display: flex;
+    flex-direction: column;
 }
 
 :root {
     --square-size: 100px;
+    --background-color: rgb(144, 253, 227);
+}
+
+h1 {
+    margin-left: 5px;
 }
 
 .players {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    font-size: 1.2rem;
+
+}
+
+.player-name {
+    margin: 5px;
+}
+
+#x-player {
+    color: rgb(255, 108, 85);
+    background: var(--background-color);
+}
+
+#o-player {
+    color: rgb(107, 107, 255);
+    background: var(--background-color);
+}
+
+input {
+    border: 1px solid black;
+    border-radius: 20px;
+    font-size: 1.4rem;
+    padding: 8px;
+}
+
+.start-button-container,
+.reset-button-container,
+.message {
+    display: flex;
+    justify-content: center;
     align-content: center;
-    width: 60%;
-    margin: auto;
+    margin: 10px;
+    display: none;
+}
+
+button {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.3rem;
+    height: 40px;
+    width: 90px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    transition: 300ms;
+}
+
+button:hover {
+    transform: scale(1.2);
+}
+
+.message {
+    margin: 20px;
+    font-size: 2rem;
+}
+
+.start-button-container.show,
+.reset-button-container.show,
+.message.show {
+    display: flex;
 }
 
 .board-container {
@@ -25,6 +93,11 @@ body {
     grid-template-columns: repeat(3, auto);
     justify-content: center;
     align-content: center;
+    display: none;
+}
+
+.board-container.show {
+    display: grid;
 }
 
 .square {
@@ -65,7 +138,7 @@ body {
     right: 0;
     left: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.8);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,4 +149,20 @@ body {
 
 .winning-message.show {
     display: flex;
+}
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 30px;
+    width: 100%;
+    margin-top: auto;
+    background: rgba(0, 0, 0, 0.05);
+
+}
+
+#sandoval {
+    margin-right: 5px;
+    color: rgba(0, 0, 0, 0.5);
 }
